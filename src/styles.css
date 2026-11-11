@@ -90,6 +90,11 @@ h1 { max-width: 650px; margin: 24px 0 18px; font-size: clamp(58px, 6.6vw, 88px);
 .project-art--college { background: #e5eee9; }
 .project-art--crop { background: #f4e9cf; }
 .project-art--pipeline { background: #d9eee8; }
+.project-art--support { background: linear-gradient(125deg, #27241f, #65401f); }
+.support-art { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; max-width: 355px; padding: 13px 16px; border: 1px solid rgba(255,250,240,.22); border-radius: 13px; background: rgba(255,250,240,.08); box-shadow: 0 12px 28px rgba(20,16,11,.14); transform: rotate(-2deg); }
+.support-art span { padding: 8px 11px; border-radius: 8px; background: #fffaf0; color: #28231c; font-size: 9px; font-weight: 800; letter-spacing: .08em; }
+.support-art span:nth-child(2) { background: #f0b817; }
+.support-art b { width: 100%; color: #ffdb73; font-size: 8px; letter-spacing: .16em; text-align: right; }
 .art-index { position: absolute; top: 17px; left: 19px; color: rgba(24,36,58,.68); font-size: 9px; font-weight: 700; letter-spacing: .13em; }
 .route-art { width: 54%; height: 62px; position: relative; }
 .route-art::before { content: ''; position: absolute; top: 30px; left: 8px; right: 3px; height: 1px; background: var(--blue); transform: rotate(-11deg); }

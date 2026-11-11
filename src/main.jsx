@@ -15,6 +15,16 @@ const projects = [
   },
   {
     number: '02',
+    title: 'Pace & Peak Customer Support Assistant',
+    category: 'Local AI-style support app',
+    description: 'A local, rule-based support assistant grounded in SQLite store data. It answers product and policy questions, calculates catalog metrics, and looks up fictional orders by exact ID.',
+    tools: ['Python', 'Streamlit', 'SQLite'],
+    href: 'https://pace-peak-support.streamlit.app/',
+    linkLabel: 'Launch the live app',
+    visual: 'support',
+  },
+  {
+    number: '03',
     title: 'Freight Brokerage Operations Analytics',
     category: 'Business intelligence',
     description: 'A simulated freight business brought to life with a relational database, operational SQL analysis, and a Power BI dashboard.',
@@ -23,7 +33,7 @@ const projects = [
     visual: 'freight',
   },
   {
-    number: '03',
+    number: '04',
     title: 'Charlotte Crash Severity',
     category: 'Machine learning',
     description: 'An end-to-end capstone exploring crash severity patterns and presenting model results through an interactive application.',
@@ -32,7 +42,7 @@ const projects = [
     visual: 'crash',
   },
   {
-    number: '04',
+    number: '05',
     title: 'Discovering Song Types Through Clustering',
     category: 'Unsupervised learning',
     description: 'An exploration of how music data can reveal natural groupings and different kinds of listening patterns.',
@@ -41,7 +51,7 @@ const projects = [
     visual: 'music',
   },
   {
-    number: '05',
+    number: '06',
     title: 'The EV Revolution in Washington State',
     category: 'Data visualization',
     description: 'A Power BI view of electric vehicle adoption, turning a large public dataset into clear trends and comparisons.',
@@ -50,7 +60,7 @@ const projects = [
     visual: 'ev',
   },
   {
-    number: '06',
+    number: '07',
     title: 'Predicting Latency in Cellular Networks',
     category: 'Regression analysis',
     description: 'A regression project investigating how network measurements can help explain and predict cellular latency.',
@@ -59,7 +69,7 @@ const projects = [
     visual: 'network',
   },
   {
-    number: '07',
+    number: '08',
     title: 'Private vs. Public College Classification',
     category: 'Classification',
     description: 'A classification study using college data to explore which features distinguish private and public institutions.',
@@ -68,7 +78,7 @@ const projects = [
     visual: 'college',
   },
   {
-    number: '08',
+    number: '09',
     title: 'Finding the Right Crop for the Conditions',
     category: 'Applied machine learning',
     description: 'A data-driven crop recommendation project using soil and climate conditions to guide the selection.',
@@ -101,12 +111,13 @@ function ProjectArtwork({ type, number }) {
       {type === 'college' && <div className="dots-art">{Array.from({ length: 25 }, (_, i) => <i key={i} />)}</div>}
       {type === 'crop' && <div className="leaf-art"><i /><i /><i /><b /></div>}
       {type === 'pipeline' && <div className="pipeline-art">{['GEN', 'ETL', 'SQL', 'APP'].map((step) => <span key={step}>{step}</span>)}</div>}
+      {type === 'support' && <div className="support-art"><span>PRODUCT HELP</span><span>ORDER LOOKUP</span><b>LOCAL · SQLITE</b></div>}
     </div>
   );
 }
 
 function ProjectCard({ project }) {
-  const linkLabel = project.local ? 'View project details' : 'Read the case study';
+  const linkLabel = project.local ? 'View project details' : (project.linkLabel || 'Read the case study');
   const Card = project.local ? 'a' : 'article';
   return (
     <Card className={`project-card ${project.local ? 'project-card--linked' : ''}`} href={project.local ? project.href : undefined} aria-label={project.local ? `${project.title} project details` : undefined}>
